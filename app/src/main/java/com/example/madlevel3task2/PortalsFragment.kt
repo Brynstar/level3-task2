@@ -7,10 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_portals.*
@@ -51,13 +48,14 @@ class PortalsFragment : Fragment() {
     }
 
     private fun observeAddReminderResult() {
-        setFragmentResultListener(REQ_REMINDER_KEY) { key, bundle ->
-            bundle.getString(BUNDLE_REMINDER_KEY)?.let {
-                val portal = Portal(it, it)
+        setFragmentResultListener(REQ_PORTAL_KEY) { key, bundle ->
+            bundle.getParcelable<Portal>(BUNDLE_PORTAL_KEY)?.let {
+                val portal = Portal(it.portalTitle, it.portalUrl)
+                println("Hello")
 
                 portals.add(portal)
                 portalAdapter.notifyDataSetChanged()
-            } ?: Log.e("ReminderFragment", "Request triggered, but empty reminder text!")
+            } ?: Log.e("PortalsFragment", "Request triggered, but empty portal text!")
 
         }
     }

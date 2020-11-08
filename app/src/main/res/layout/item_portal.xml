@@ -10,10 +10,24 @@
     card_view:cardElevation="4dp"
     card_view:cardUseCompatPadding="true">
 
-    <TextView
-        android:id="@+id/tvPortal"
-        android:layout_margin="16dp"
-        style="@style/TextAppearance.MaterialComponents.Body2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/tvUrl"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
 </androidx.cardview.widget.CardView>

@@ -11,8 +11,8 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="add_portal">ADD PORTAL</string>
-    <string name="hint_title">title</string>
-    <string name="hint_portal">portal</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_portal">Url</string>
 
     <string name="not_valid_portal">Invalid portal</string>
 </resources>
