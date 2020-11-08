@@ -44,23 +44,16 @@ class PortalsFragment : Fragment() {
                 DividerItemDecoration.VERTICAL
             )
         )
-//        createItemTouchHelper().attachToRecyclerView(rvPortals)
     }
 
     private fun observeAddReminderResult() {
         setFragmentResultListener(REQ_PORTAL_KEY) { key, bundle ->
             bundle.getParcelable<Portal>(BUNDLE_PORTAL_KEY)?.let {
                 val portal = Portal(it.portalTitle, it.portalUrl)
-                println("Hello")
-
                 portals.add(portal)
                 portalAdapter.notifyDataSetChanged()
             } ?: Log.e("PortalsFragment", "Request triggered, but empty portal text!")
 
         }
     }
-
-//    private fun createItemTouchHelper(): ItemTouchHelper {
-//        return ItemTouchHelper(null)
-//    }
 }
