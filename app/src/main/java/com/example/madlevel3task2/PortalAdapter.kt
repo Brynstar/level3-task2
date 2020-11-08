@@ -20,7 +20,7 @@ class PortalAdapter(private val portals: List<Portal>) :
             itemView.setOnClickListener {
                 val builder = CustomTabsIntent.Builder()
                 val customTabsIntent = builder.build()
-                customTabsIntent.launchUrl(itemView.context, Uri.parse(portal.portalUrl))
+                customTabsIntent.launchUrl(itemView.context, Uri.parse("http://" + portal.portalUrl))
             }
         }
     }
